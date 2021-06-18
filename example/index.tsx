@@ -1,7 +1,7 @@
 import "react-app-polyfill/ie11";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { Input } from "../.";
+import { Input, Radio } from "../.";
 
 const App = () => {
   const [value, setValue] = React.useState("");
@@ -16,6 +16,10 @@ const App = () => {
         onClear={() => setValue("")}
         isClearable
       />
+
+      <Radio name="hola" value="1" checked />
+      <Radio name="hola" value="2" />
+      <Radio name="aa" value="2" isCheckbox />
     </div>
   );
 };
