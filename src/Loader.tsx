@@ -27,9 +27,10 @@ export type LoaderProps = {}
 export default Loader
 
 const loaderStyles = css`
-  position: absolute;
+  /* position: absolute;
   right: 0.75em;
-  top: calc(50% - 0.25em);
+  top: calc(50% - 0.25em); */
+
   width: 2em;
   height: 2em;
 `
