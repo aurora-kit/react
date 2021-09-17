@@ -1,8 +1,9 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react'
 import { css as rawCss } from '@emotion/css'
-import { forwardRef } from 'react'
+import { forwardRef, useState, useRef } from 'react'
 import Loader from './Loader'
+import { useOnClickOutside } from './hooks'
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ children, loading, inverted, disabled, animated, ...props }, ref) => {
@@ -43,11 +44,42 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   }
 )
 
+export function ConfirmButton({
+  children,
+  onClick,
+  confirmMessage,
+  ...props
+}: ConfirmButtonProps) {
+  const ref = useRef(null)
+  const [isConfirming, setIsConfirming] = useState(false)
+  useOnClickOutside(ref, () => setIsConfirming(false))
+
+  function handleClick(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+    if (isConfirming) {
+      if (onClick && typeof onClick === 'function') {
+        onClick(e)
+      }
+    } else {
+      setIsConfirming(true)
+    }
+  }
+
+  return (
+    <Button onClick={handleClick} {...props} ref={ref}>
+      {isConfirming ? confirmMessage : children}
+    </Button>
+  )
+}
+
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   loading?: boolean
   disabled?: boolean
   inverted?: boolean
   animated?: boolean
+}
+
+export type ConfirmButtonProps = ButtonProps & {
+  confirmMessage?: string | React.ReactElement
 }
 
 export default Button

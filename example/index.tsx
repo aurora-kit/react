@@ -1,7 +1,7 @@
 import 'react-app-polyfill/ie11'
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import { Input, Radio, Loader, Button } from '../.'
+import { Input, Radio, Loader, Button, ConfirmButton } from '../.'
 import './styles.css'
 
 const App = () => {
@@ -31,6 +31,16 @@ const App = () => {
       >
         Click me
       </Button>
+
+      <ConfirmButton
+        onClick={() => setLoading(l => !l)}
+        loading={loading}
+        inverted
+        animated
+        confirmMessage="Sure???"
+      >
+        Confirm me
+      </ConfirmButton>
     </div>
   )
 }
