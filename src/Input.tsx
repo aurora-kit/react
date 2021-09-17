@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, css, Global } from '@emotion/react'
+import { jsx, css } from '@emotion/react'
 import { forwardRef } from 'react'
 import Loader from './Loader'
 
@@ -61,22 +61,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           </button>
         ) : null}
         {loading ? <Loader /> : null}
-        <Global
-          styles={css`
-            @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
-            html {
-              box-sizing: border-box;
-              font-size: 14px;
-              font-family: 'Nunito Sans', sans-serif;
-            }
-
-            *,
-            *:before,
-            *:after {
-              box-sizing: inherit;
-            }
-          `}
-        />
       </label>
     )
   }

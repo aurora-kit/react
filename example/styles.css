@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+
+html {
+  box-sizing: border-box;
+  font-size: 14px;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+:root {
+  --au-accent-color: #ff4a5a;
+}

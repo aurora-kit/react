@@ -2,6 +2,7 @@
 import { jsx, css } from '@emotion/react'
 
 const Loader: React.FC<LoaderProps> = props => {
+  console.log(props.className)
   return (
     <svg viewBox="0 0 50 50" css={loaderStyles} {...props}>
       <path
@@ -22,15 +23,13 @@ const Loader: React.FC<LoaderProps> = props => {
   )
 }
 
-export type LoaderProps = {}
+export type LoaderProps = {
+  className?: string
+}
 
 export default Loader
 
 const loaderStyles = css`
-  /* position: absolute;
-  right: 0.75em;
-  top: calc(50% - 0.25em); */
-
   width: 2em;
   height: 2em;
 `
