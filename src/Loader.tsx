@@ -2,7 +2,6 @@
 import { jsx, css } from '@emotion/react'
 
 const Loader: React.FC<LoaderProps> = props => {
-  console.log(props.className)
   return (
     <svg viewBox="0 0 50 50" css={loaderStyles} {...props}>
       <path
