@@ -146,3 +146,6 @@ const loaderStyles = rawCss`
   opacity: 0;
   transition: 0.3s ease all;
 `
+
+export const buttonCx = rawCss`${buttonStyles}`
+export const buttonInvertedCx = rawCss`${invertedStyles}`

@@ -1,7 +1,15 @@
 import 'react-app-polyfill/ie11'
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import { Input, Radio, Loader, Button, ConfirmButton } from '../.'
+import {
+  Input,
+  Radio,
+  Loader,
+  Button,
+  ConfirmButton,
+  buttonCx,
+  buttonInvertedCx,
+} from '../.'
 import './styles.css'
 
 const App = () => {
@@ -41,6 +49,13 @@ const App = () => {
       >
         Confirm me
       </ConfirmButton>
+
+      <br />
+      <br />
+      <button className={buttonCx}>Raw button</button>
+      <button className={`${buttonCx} ${buttonInvertedCx}`}>
+        Raw button inverted
+      </button>
     </div>
   )
 }
