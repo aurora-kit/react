@@ -92,7 +92,7 @@ const Select: React.FC<SelectProps> = ({
           }),
           placeholder: (base, state) => ({
             ...base,
-            color: state.isFocused ? '#000' : '#000',
+            color: state.isFocused ? '#000' : '#aaa',
             paddingLeft: '0.25em',
             marginTop: 2,
             position: 'relative',
