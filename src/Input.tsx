@@ -21,7 +21,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     return (
       <label css={wrapperStyle}>
         <p css={labelStyle}>
-          {label || placeholder}{' '}
+          {label}
           {error ? (
             <span
               css={css`
