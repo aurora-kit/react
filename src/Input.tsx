@@ -134,7 +134,7 @@ const inputStyle = css`
   }
   &:focus {
     background-color: #fff;
-    border-color: var(--c-dark-blue);
+    border-color: var(--au-accent-color);
     box-shadow: 0 0 0 4px #f1f1f3;
   }
 `
