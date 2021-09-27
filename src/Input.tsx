@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react'
-import { forwardRef } from 'react'
+import { forwardRef, Fragment } from 'react'
 import Loader from './Loader'
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
@@ -21,7 +21,11 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     return (
       <label css={wrapperStyle}>
         <p css={labelStyle}>
-          {label || (!label && hasValue) ? placeholder : null}
+          {label || (!label && hasValue) ? (
+            placeholder
+          ) : (
+            <Fragment>&nbsp;</Fragment>
+          )}
           {error ? (
             <span
               css={css`

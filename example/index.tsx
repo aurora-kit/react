@@ -18,7 +18,6 @@ const App = () => {
   return (
     <div style={{ width: 400 }}>
       <Input
-        label="hola"
         placeholder="jlkjkl"
         onChange={e => setValue(e.target.value)}
         value={value}
