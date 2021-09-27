@@ -83,13 +83,13 @@ export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
 
 export default Input
 
-const wrapperStyle = css`
+export const wrapperStyle = css`
   position: relative;
   display: block;
   margin-bottom: 10px;
 `
 
-const labelStyle = css`
+export const labelStyle = css`
   position: relative;
   margin: 0;
   font-size: 14px;
@@ -99,7 +99,7 @@ const labelStyle = css`
   padding-right: 0.7em;
   margin-bottom: 0.3em;
 `
-const textStyle = css`
+export const textStyle = css`
   position: absolute;
   right: 18px;
   bottom: 0;

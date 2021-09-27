@@ -17,7 +17,7 @@ const App = () => {
   const [value, setValue] = React.useState('')
   const [loading, setLoading] = React.useState(false)
   return (
-    <div style={{ width: 400 }}>
+    <div style={{ display: 'flex', alignItems: 'center' }}>
       <Input
         placeholder="jlkjkl"
         onChange={e => setValue(e.target.value)}
@@ -26,7 +26,21 @@ const App = () => {
         onClear={() => setValue('')}
         isClearable
       />
-
+      <Select
+        placeholder="Type"
+        options={[
+          { value: 'alphabet', label: 'Alphabet' },
+          { value: 'vocabulary', label: 'Vocabulary' },
+          { value: 'grammar', label: 'Grammar' },
+          { value: 'sentences', label: 'Sentences' },
+          { value: 'reading', label: 'Reading' },
+          { value: 'listening', label: 'Listening' },
+        ]}
+        isSearchable={false}
+        isClearable
+        isMulti
+        style={{ minHeight: 48 }}
+      />
       <Radio name="hola" value="1" checked />
       <Radio name="hola" value="2" />
       <Radio name="aa" value="2" isCheckbox />
@@ -56,28 +70,6 @@ const App = () => {
       <button className={`${buttonCx} ${buttonInvertedCx}`}>
         Raw button inverted
       </button>
-
-      <Select
-        placeholder="Type"
-        options={[
-          { value: 'alphabet', label: 'Alphabet' },
-          { value: 'vocabulary', label: 'Vocabulary' },
-          { value: 'grammar', label: 'Grammar' },
-          { value: 'sentences', label: 'Sentences' },
-          { value: 'reading', label: 'Reading' },
-          { value: 'listening', label: 'Listening' },
-        ]}
-        isSearchable={false}
-        // onChange={(selectedOption, triggeredAction) => {
-        //   if (triggeredAction.action === 'clear') {
-        //     dispatch({ type: 'type', payload: undefined })
-        //   } else {
-        //     dispatch({ type: 'type', payload: selectedOption.value })
-        //   }
-        // }}
-        isClearable
-        isMulti
-      />
     </div>
   )
 }
