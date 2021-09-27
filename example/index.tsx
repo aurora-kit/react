@@ -9,6 +9,7 @@ import {
   ConfirmButton,
   buttonCx,
   buttonInvertedCx,
+  Select,
 } from '../.'
 import './styles.css'
 
@@ -55,8 +56,39 @@ const App = () => {
       <button className={`${buttonCx} ${buttonInvertedCx}`}>
         Raw button inverted
       </button>
+
+      <Select
+        placeholder="Type"
+        options={[
+          { value: 'alphabet', label: 'Alphabet' },
+          { value: 'vocabulary', label: 'Vocabulary' },
+          { value: 'grammar', label: 'Grammar' },
+          { value: 'sentences', label: 'Sentences' },
+          { value: 'reading', label: 'Reading' },
+          { value: 'listening', label: 'Listening' },
+        ]}
+        isSearchable={false}
+        // onChange={(selectedOption, triggeredAction) => {
+        //   if (triggeredAction.action === 'clear') {
+        //     dispatch({ type: 'type', payload: undefined })
+        //   } else {
+        //     dispatch({ type: 'type', payload: selectedOption.value })
+        //   }
+        // }}
+        isClearable
+        isMulti
+      />
     </div>
   )
 }
 
 ReactDOM.render(<App />, document.getElementById('root'))
+
+export const TYPE_OPTS = [
+  { value: 'alphabet', label: 'Alphabet' },
+  { value: 'vocabulary', label: 'Vocabulary' },
+  { value: 'grammar', label: 'Grammar' },
+  { value: 'sentences', label: 'Sentences' },
+  { value: 'reading', label: 'Reading' },
+  { value: 'listening', label: 'Listening' },
+]
