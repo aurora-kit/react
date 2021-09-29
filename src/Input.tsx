@@ -21,7 +21,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     return (
       <label css={wrapperStyle}>
         <p css={labelStyle}>
-          {label || (!label && hasValue) ? (
+          {label ? (
+            label
+          ) : !label && hasValue ? (
             placeholder
           ) : (
             <Fragment>&nbsp;</Fragment>
