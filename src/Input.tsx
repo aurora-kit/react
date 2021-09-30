@@ -126,7 +126,7 @@ const inputStyle = css`
   outline: 0;
   line-height: 1;
   padding: 13.5px 20px;
-  background: #f1f1f3;
+  /* background: #f1f1f3; */
 
   &::placeholder {
     color: #9a9ba4;

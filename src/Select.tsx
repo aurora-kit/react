@@ -67,8 +67,7 @@ const Select: React.FC<SelectProps> = ({
                   ? 'var(--au-accent-color)'
                   : 'transparent',
             },
-            backgroundColor:
-              state.menuIsOpen || state.isFocused ? '#fff' : '#f1f1f3;',
+            backgroundColor: '#fff',
             borderRadius: state.menuIsOpen ? '1.4em' : '2em',
             borderWidth: 1,
             borderBottomColor: state.menuIsOpen
