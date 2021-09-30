@@ -100,7 +100,7 @@ const Select: React.FC<SelectProps> = ({
           }),
           indicatorsContainer: base => ({
             ...base,
-            paddingRight: '9px',
+            paddingRight: '19px',
           }),
 
           indicatorSeparator: () => ({ display: 'none' }),
