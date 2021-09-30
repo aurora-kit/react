@@ -10,6 +10,7 @@ import {
   buttonCx,
   buttonInvertedCx,
   Select,
+  Wrapper,
 } from '../.'
 import './styles.css'
 
@@ -26,6 +27,17 @@ const App = () => {
         onClear={() => setValue('')}
         isClearable
       />
+      <Wrapper label={<>&nbsp;</>}>
+        <Button
+          onClick={() => setLoading(l => !l)}
+          loading={loading}
+          inverted
+          animated
+        >
+          Click me
+        </Button>
+      </Wrapper>
+
       <Select
         placeholder="Type"
         options={[

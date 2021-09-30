@@ -125,7 +125,7 @@ const inputStyle = css`
   transition: color 0.3s, background 0.3s;
   outline: 0;
   line-height: 1;
-  padding: 13.5px 20px;
+  padding: 0.9em 1.2em;
   /* background: #f1f1f3; */
 
   &::placeholder {

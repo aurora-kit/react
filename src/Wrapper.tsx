@@ -13,7 +13,7 @@ const Wrapper: React.FC<WrapperProps> = ({ label, children, ...props }) => {
 
 export type WrapperProps = {
   className?: string
-  label?: string
+  label?: any
 }
 
 export default Wrapper

@@ -97,8 +97,8 @@ const baseStyles = css`
 
 const buttonStyles = css`
   position: relative;
-  padding: 0.7em 1.2em 0.6em;
-  line-height: 1.3;
+  padding: 0.8em 1.2em;
+  line-height: 1;
   border-radius: 2em;
   border-color: transparent;
   border-width: 2px;
