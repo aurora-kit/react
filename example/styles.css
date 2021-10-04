@@ -3,13 +3,25 @@
 html {
   box-sizing: border-box;
   font-size: 14px;
-  font-family: 'Nunito Sans', sans-serif;
 }
 
 *,
 *:before,
 *:after {
   box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  font-family: 'Nunito Sans', sans-serif;
+  font-family: Avenir, sans-serif !important;
+  letter-spacing: -0.35px;
+  overflow-y: overlay;
+  font-size: 1rem;
+  line-height: 1.4285em;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 :root {
