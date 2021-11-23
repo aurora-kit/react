@@ -1,9 +1,16 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react'
 import { forwardRef, Fragment } from 'react'
+import {
+  wrapperStyle,
+  labelStyle,
+  textStyle,
+  inputStyle,
+  clearStyles,
+} from './Input'
 import Loader from './Loader'
 
-const Input = forwardRef<HTMLInputElement, InputProps>(
+const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   (
     {
       label,
@@ -11,7 +18,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       onClear,
       isClearable,
       loading,
-      children,
       hasValue,
       placeholder,
       ...props
@@ -40,20 +46,18 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           ) : null}
         </p>
 
-        <input
+        <textarea
           ref={ref}
-          css={inputStyle}
+          css={textareaStyle}
           placeholder={placeholder}
           {...props}
         />
-
-        {children}
 
         {isClearable && !loading ? (
           <button
             type="button"
             onClick={onClear}
-            css={clearStyles}
+            css={taClearStyle}
             disabled={!hasValue}
           >
             <svg
@@ -72,7 +76,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
   }
 )
 
-export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
+export type TextareaProps = React.InputHTMLAttributes<HTMLTextAreaElement> & {
   label?: string
   placeholder?: string
   // style: React.CSSProperties
@@ -83,80 +87,15 @@ export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   hasValue?: boolean
 }
 
-export default Input
+export default Textarea
 
-export const wrapperStyle = css`
-  position: relative;
-  display: block;
-  margin-bottom: 10px;
+const textareaStyle = css`
+  ${inputStyle}
+  font: inherit;
+  min-height: 100px;
 `
 
-export const labelStyle = css`
-  position: relative;
-  margin: 0;
-  font-size: 14px;
-  letter-spacing: -0.25px;
-  font-weight: var(--f-heavy);
-  padding-left: 0.7em;
-  padding-right: 0.7em;
-  margin-bottom: 0.3em;
-`
-export const textStyle = css`
-  position: absolute;
-  right: 18px;
-  bottom: 0;
-  font-size: 0.7em;
-  max-width: 55%;
-  text-align: right;
-  text-shadow: none;
-  color: #b4b4b4;
-`
-export const inputStyle = css`
-  border: 1px solid #eae0de;
-  width: 100%;
-  min-height: 48px;
-  background-color: hsl(0, 0%, 100%);
-  border-color: transparent;
-  border-style: solid;
-  border-width: 1px;
-  color: #141520;
-  font-size: inherit;
-  border-radius: 2em;
-  transition: color 0.3s, background 0.3s;
-  outline: 0;
-  line-height: 1;
-  padding: 0.9em 1.2em;
-  /* background: #f1f1f3; */
-
-  &::placeholder {
-    color: #9a9ba4;
-  }
-  &:focus::placeholder {
-    color: rgba(255, 255, 255, 0.3);
-  }
-  &:focus {
-    background-color: #fff;
-    border-color: var(--au-accent-color);
-    box-shadow: 0 0 0 4px #f1f1f3;
-  }
-`
-export const clearStyles = css`
-  border: 0;
-  background: none;
-  padding: 0;
-  width: 20px;
-  height: 20px;
-  opacity: 0.5;
-  transition: opacity 0.3s;
-  cursor: pointer;
-  position: absolute;
-  right: 1em;
-  top: calc(50% + 2px);
-
-  &:hover {
-    opacity: 1;
-  }
-  &:disabled {
-    pointer-events: none;
-  }
+const taClearStyle = css`
+  ${clearStyles}
+  top: 2.8em
 `

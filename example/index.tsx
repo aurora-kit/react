@@ -11,6 +11,7 @@ import {
   buttonInvertedCx,
   Select,
   Wrapper,
+  Textarea,
 } from '../.'
 import './styles.css'
 
@@ -82,6 +83,8 @@ const App = () => {
       <button className={`${buttonCx} ${buttonInvertedCx}`}>
         Raw button inverted
       </button>
+
+      <Textarea>jkljl</Textarea>
     </div>
   )
 }
