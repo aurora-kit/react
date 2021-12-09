@@ -20,12 +20,13 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
       loading,
       hasValue,
       placeholder,
+      labelProps = {},
       ...props
     },
     ref
   ) => {
     return (
-      <label css={wrapperStyle}>
+      <label css={wrapperStyle} {...labelProps}>
         <p css={labelStyle}>
           {label ? (
             label
@@ -85,6 +86,7 @@ export type TextareaProps = React.InputHTMLAttributes<HTMLTextAreaElement> & {
   isClearable?: boolean
   loading?: boolean
   hasValue?: boolean
+  labelProps?: any
 }
 
 export default Textarea
