@@ -52,7 +52,7 @@ const App = () => {
         isSearchable={false}
         isClearable
         isMulti
-        style={{ minHeight: 48 }}
+        style={{ minHeight: 48, minWidth: 200 }}
       />
       <Radio name="hola" value="1" checked />
       <Radio name="hola" value="2" />

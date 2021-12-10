@@ -992,10 +992,10 @@
   resolved "https://registry.yarnpkg.com/@emotion/memoize/-/memoize-0.7.5.tgz#2c40f81449a4e554e9fc6396910ed4843ec2be50"
   integrity sha512-igX9a37DR2ZPGYtV6suZ6whr8pTFtyHL3K/oLUotxpSVO2ASaprmAe2Dkq7tBo7CRY7MMDrAa9nuQP9/YG8FxQ==
 
-"@emotion/react@11.6.0":
-  version "11.6.0"
-  resolved "https://registry.yarnpkg.com/@emotion/react/-/react-11.6.0.tgz#61fcb95c1e01255734c2c721cb9beabcf521eb0f"
-  integrity sha512-23MnRZFBN9+D1lHXC5pD6z4X9yhPxxtHr6f+iTGz6Fv6Rda0GdefPrsHL7otsEf+//7uqCdT5QtHeRxHCERzuw==
+"@emotion/react@11.7.0":
+  version "11.7.0"
+  resolved "https://registry.yarnpkg.com/@emotion/react/-/react-11.7.0.tgz#b179da970ac0e8415de3ac165deadf8d9c4bf89f"
+  integrity sha512-WL93hf9+/2s3cA1JVJlz8+Uy6p6QWukqQFOm2OZO5ki51hfucHMOmbSjiyC3t2Y4RI8XUmBoepoc/24ny/VBbA==
   dependencies:
     "@babel/runtime" "^7.13.10"
     "@emotion/cache" "^11.6.0"
@@ -1492,10 +1492,10 @@
     "@types/scheduler" "*"
     csstype "^3.0.2"
 
-"@types/react@17.0.36":
-  version "17.0.36"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.36.tgz#0d81e0e2419e6a8e9ba6af5e3a0608e70835d7d1"
-  integrity sha512-CUFUp01OdfbpN/76v4koqgcpcRGT3sYOq3U3N6q0ZVGcyeP40NUdVU+EWe3hs34RNaTefiYyBzOpxBBidCc5zw==
+"@types/react@17.0.37":
+  version "17.0.37"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.37.tgz#6884d0aa402605935c397ae689deed115caad959"
+  integrity sha512-2FS1oTqBGcH/s0E+CjrCCR9+JMpsu9b69RTFO+40ua43ZqP5MmQ4iUde/dMjWR909KxZwmOQIFq6AV6NjEG5xg==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -4809,10 +4809,10 @@ nanomatch@^1.2.9:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-nanospinner@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/nanospinner/-/nanospinner-0.4.0.tgz#f544f71fb990423528b8f6dd6c26134cf9f21659"
-  integrity sha512-FhxiB9PcEztMw6XfQDSLJBMlmN4n7B2hl/oiK4Hy9479r1+df0i2099DgcEx+m6yBfBJVUuKpILvP8fM3rK3Sw==
+nanospinner@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/nanospinner/-/nanospinner-0.5.0.tgz#4a328f886615c95ddc54b104bec6f1817de11f6f"
+  integrity sha512-VaEzZRHgdgvru4qr5Oe7SjalSGQsoCZrl42FEnAYHp8R+ghcok6u8Yo5U37kD+ABOjRh1IUOA64qqff+TznDfg==
   dependencies:
     picocolors "^1.0.0"
 
@@ -5885,10 +5885,10 @@ sisteransi@^1.0.5:
   resolved "https://registry.yarnpkg.com/sisteransi/-/sisteransi-1.0.5.tgz#134d681297756437cc05ca01370d3a7a571075ed"
   integrity sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==
 
-size-limit@7.0.3:
-  version "7.0.3"
-  resolved "https://registry.yarnpkg.com/size-limit/-/size-limit-7.0.3.tgz#1cc6e83d1f090c2008080a193337a9b84c98825d"
-  integrity sha512-CDGzcnw8f34yZ8ckh0dZ0ZNVfbfwJoG1+DWHdn63GieS0dnAB7oUH6Rok3Xaz4Ba+RUAd+4kXoJyZWHw5KkArw==
+size-limit@7.0.4:
+  version "7.0.4"
+  resolved "https://registry.yarnpkg.com/size-limit/-/size-limit-7.0.4.tgz#e427c696b63e29096be97a576cd7fd95a3ec7839"
+  integrity sha512-IkY30erk6psU6UCg/R0crNUIWIQsTTVv1/tMtY0ifOtq6Y2F2cUC3Z0zXNAmKcncnl9HJjUIQhw2WNYRlDiv0Q==
   dependencies:
     bytes-iec "^3.1.1"
     chokidar "^3.5.2"
@@ -5896,7 +5896,7 @@ size-limit@7.0.3:
     globby "^11.0.4"
     lilconfig "^2.0.3"
     mkdirp "^1.0.4"
-    nanospinner "^0.4.0"
+    nanospinner "^0.5.0"
     picocolors "^1.0.0"
 
 slash@^3.0.0:
@@ -6510,10 +6510,10 @@ typedarray-to-buffer@^3.1.5:
   dependencies:
     is-typedarray "^1.0.0"
 
-typescript@4.5.2:
-  version "4.5.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.5.2.tgz#8ac1fba9f52256fdb06fb89e4122fa6a346c2998"
-  integrity sha512-5BlMof9H1yGt0P8/WF+wPNw6GfctgGjXp5hkblpyT+8rkASSmkUKMXrxR0Xg8ThVCi/JnHQiKXeBaEwCeQwMFw==
+typescript@4.5.3:
+  version "4.5.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.5.3.tgz#afaa858e68c7103317d89eb90c5d8906268d353c"
+  integrity sha512-eVYaEHALSt+s9LbvgEv4Ef+Tdq7hBiIZgii12xXJnukryt3pMgJf6aKhoCZ3FWQsu6sydEnkg11fYXLzhLBjeQ==
 
 typescript@^3.7.3:
   version "3.9.10"
