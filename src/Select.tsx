@@ -22,7 +22,9 @@ const Select: React.FC<SelectProps> = ({
     value?: string
   }) => {
     return options
-      ? options.find((option: OptionProps) => option.value === value)
+      ? props.options
+          .flatMap((v: any) => (v.options ? v.options : v))
+          .find((option: OptionProps) => option.value === value)
       : ''
   }
   const Comp = async ? AsyncSelect : ReactSelect

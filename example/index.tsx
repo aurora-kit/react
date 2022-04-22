@@ -49,9 +49,30 @@ const App = () => {
           { value: 'reading', label: 'Reading' },
           { value: 'listening', label: 'Listening' },
         ]}
+        value="reading"
+        shapeValue
         isSearchable={false}
         isClearable
         isMulti
+        style={{ minHeight: 48, minWidth: 200 }}
+      />
+      <Select
+        placeholder="Type"
+        options={[
+          {
+            label: 'Group 1',
+            options: [
+              { label: 'Group 1, option 1', value: 'value_1' },
+              { label: 'Group 1, option 2', value: 'value_2' },
+            ],
+          },
+          { label: 'A root option', value: 'value_3' },
+          { label: 'Another root option', value: 'value_4' },
+        ]}
+        isSearchable={false}
+        isClearable
+        value="value_1"
+        shapeValue
         style={{ minHeight: 48, minWidth: 200 }}
       />
       <Radio name="hola" value="1" checked />
