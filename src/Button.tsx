@@ -110,23 +110,27 @@ const buttonStyles = css`
 
   ${baseStyles}
 
-  &:hover {
-    ${hoverAndInvertedStyle}
-  }
-
   &:disabled {
     pointer-events: none;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
     background-color: rgba(255, 255, 255, 0.3) !important;
     color: rgba(43, 41, 78, 0.8) !important;
   }
+
+  @media not (hover: none) {
+    &:hover {
+      ${hoverAndInvertedStyle}
+    }
+  }
 `
 
 const invertedStyles = css`
   ${hoverAndInvertedStyle}
 
-  &:hover {
-    ${baseStyles}
+  @media not (hover: none) {
+    &:hover {
+      ${baseStyles}
+    }
   }
 `
 
