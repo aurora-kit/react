@@ -28,7 +28,8 @@ export default PasswordInput;
 export const buttonStyle = css`
   position: absolute;
   right: 15px;
-  bottom: 10px;
+  top: 50%;
+  transform: translateY(calc(-50% + 2px));
   padding: 0;
   border: 0;
   background-color: transparent;
