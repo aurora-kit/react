@@ -12,6 +12,7 @@ import {
   Select,
   Wrapper,
   Textarea,
+  PasswordInput,
 } from '../.';
 import './styles.css';
 
@@ -133,6 +134,7 @@ const App = () => {
           isClearable
           hideLabel
         />
+        <PasswordInput />
       </div>
     </>
   );

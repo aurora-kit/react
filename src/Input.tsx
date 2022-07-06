@@ -20,7 +20,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     },
     ref
   ) => {
-    console.log({ hideLabel });
     return (
       <label css={wrapperStyle}>
         {hideLabel ? null : (
