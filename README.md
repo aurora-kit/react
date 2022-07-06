@@ -1,1 +1,1 @@
-# Aurora Kit React
+# Aurora Kit / react

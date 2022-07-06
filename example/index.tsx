@@ -1,6 +1,6 @@
-import 'react-app-polyfill/ie11'
-import * as React from 'react'
-import * as ReactDOM from 'react-dom'
+import 'react-app-polyfill/ie11';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import {
   Input,
   Radio,
@@ -12,12 +12,12 @@ import {
   Select,
   Wrapper,
   Textarea,
-} from '../.'
-import './styles.css'
+} from '../.';
+import './styles.css';
 
 const App = () => {
-  const [value, setValue] = React.useState('')
-  const [loading, setLoading] = React.useState(false)
+  const [value, setValue] = React.useState('');
+  const [loading, setLoading] = React.useState(false);
   return (
     <div style={{ display: 'flex', alignItems: 'center' }}>
       <Input
@@ -107,10 +107,10 @@ const App = () => {
 
       <Textarea>jkljl</Textarea>
     </div>
-  )
-}
+  );
+};
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root'));
 
 export const TYPE_OPTS = [
   { value: 'alphabet', label: 'Alphabet' },
@@ -119,4 +119,4 @@ export const TYPE_OPTS = [
   { value: 'sentences', label: 'Sentences' },
   { value: 'reading', label: 'Reading' },
   { value: 'listening', label: 'Listening' },
-]
+];
