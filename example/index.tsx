@@ -1,6 +1,6 @@
 import 'react-app-polyfill/ie11';
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import {
   Input,
   Radio,
@@ -13,12 +13,15 @@ import {
   Wrapper,
   Textarea,
   PasswordInput,
+  Tags,
 } from '../.';
 import './styles.css';
 
 const App = () => {
   const [value, setValue] = React.useState('');
   const [loading, setLoading] = React.useState(false);
+  const [tags, setTags] = React.useState(['hola', 'que', 'tal']);
+
   return (
     <>
       <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -135,12 +138,33 @@ const App = () => {
           hideLabel
         />
         <PasswordInput />
+
+        <Tags
+          value={tags.map(createOption)}
+          onChange={setTags}
+          placeholder="Add tags"
+        />
       </div>
     </>
   );
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+interface Option {
+  readonly label: string;
+  readonly value: string;
+}
+
+const createOption = (opt: string | Option) =>
+  typeof opt === 'string'
+    ? {
+        label: opt,
+        value: opt,
+      }
+    : opt;
+
+const container = document.getElementById('root');
+const root = createRoot(container!);
+root.render(<App />);
 
 export const TYPE_OPTS = [
   { value: 'alphabet', label: 'Alphabet' },

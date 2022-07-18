@@ -1,33 +1,38 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
-import { Fragment } from 'react';
-import ReactSelect, { components, Props } from 'react-select';
-import AsyncSelect from 'react-select/async';
+import { Fragment, useState } from 'react';
+import CreatableSelect from 'react-select/creatable';
 import { wrapperStyle, labelStyle, textStyle } from './Input';
+import { SelectProps, Option } from './Select';
 
-const Select: React.FC<SelectProps> = ({
-  async,
-  shapeValue,
-  menuListStyle,
-  style,
-  label,
-  error,
-  ...props
-}) => {
-  const defaultValue = ({
-    options,
-    value,
-  }: {
-    options?: [OptionProps];
-    value?: string;
+const Tags: React.FC<Omit<SelectProps, 'value'> & {
+  value: Option[];
+}> = ({ async, shapeValue, menuListStyle, style, label, error, ...props }) => {
+  const [inputValue, setInputValue] = useState('');
+
+  function handleInputChange(value: string) {
+    setInputValue(value);
+  }
+
+  const handleKeyDown: React.KeyboardEventHandler<HTMLDivElement> = (event: {
+    key: any;
+    preventDefault: () => void;
   }) => {
-    return options
-      ? props.options
-          .flatMap((v: any) => (v.options ? v.options : v))
-          .find((option: OptionProps) => option.value === value)
-      : '';
+    if (!inputValue) return;
+    switch (event.key) {
+      case 'Enter':
+      case 'Tab':
+        setInputValue('');
+        if (props.onChange) {
+          const option = createOption(inputValue);
+          props.onChange([...props.value, option], {
+            action: 'create-option',
+            option,
+          });
+        }
+        event.preventDefault();
+    }
   };
-  const Comp = async ? AsyncSelect : ReactSelect;
 
   return (
     <label css={wrapperStyle}>
@@ -45,17 +50,9 @@ const Select: React.FC<SelectProps> = ({
         ) : null}
       </p>
 
-      <Comp
+      <CreatableSelect
         {...props}
-        components={selectComponents}
-        {...(shapeValue
-          ? {
-              value: defaultValue({
-                options: props.options,
-                value: props.value,
-              }),
-            }
-          : {})}
+        components={components}
         styles={{
           control: (base, state) => ({
             ...base,
@@ -197,6 +194,12 @@ const Select: React.FC<SelectProps> = ({
             },
           }),
         }}
+        inputValue={inputValue}
+        onInputChange={handleInputChange}
+        onKeyDown={handleKeyDown}
+        isClearable
+        isMulti
+        menuIsOpen={false}
       />
     </label>
   );
@@ -217,43 +220,11 @@ export function Indicator(props: any) {
   );
 }
 
-function DropdownIndicator(props: any) {
-  return (
-    <components.DropdownIndicator {...props}>
-      <Indicator />
-    </components.DropdownIndicator>
-  );
-}
+const components = { DropdownIndicator: null };
 
-const selectComponents = {
-  DropdownIndicator,
-};
+export default Tags;
 
-export type SelectProps = Props & {
-  label?: string;
-  placeholder?: string;
-  error?: boolean;
-  onClear?: () => void;
-  isClearable?: boolean;
-  loading?: boolean;
-  hasValue?: boolean;
-
-  async?: boolean;
-  style?: React.CSSProperties;
-  menuListStyle?: {};
-  shapeValue?: any;
-  options?: any;
-  value?: string;
-};
-
-export type OptionProps = {
-  value?: string;
-  label?: string;
-};
-
-export interface Option {
-  readonly label: string;
-  readonly value: string;
-}
-
-export default Select;
+const createOption = (label: string) => ({
+  label,
+  value: label,
+});

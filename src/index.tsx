@@ -5,6 +5,7 @@ export { default as Loader } from './Loader';
 export { default as Select } from './Select';
 export { default as Wrapper } from './Wrapper';
 export { default as Textarea } from './Textarea';
+export { default as Tags } from './Tags';
 export {
   default as Button,
   ConfirmButton,
