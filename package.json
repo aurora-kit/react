@@ -27,12 +27,6 @@
       "pre-commit": "tsdx lint"
     }
   },
-  "prettier": {
-    "printWidth": 80,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5"
-  },
   "name": "@aurora-kit/react",
   "author": "Lionel Tzatzkin",
   "module": "dist/aurora-kit-react.esm.js",

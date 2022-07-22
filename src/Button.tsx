@@ -58,6 +58,7 @@ export function ConfirmButton({
     if (isConfirming) {
       if (onClick && typeof onClick === 'function') {
         onClick(e)
+        setIsConfirming(false)
       }
     } else {
       setIsConfirming(true)
