@@ -26,4 +26,6 @@ body {
 
 :root {
   --au-accent-color: #ff4a5a;
+  /* --au-inverted-bg: var(--au-accent-color);
+  --au-inverted-color: white; */
 }

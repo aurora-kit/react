@@ -86,8 +86,8 @@ export type ConfirmButtonProps = ButtonProps & {
 export default Button
 
 const hoverAndInvertedStyle = css`
-  background-color: #fff;
-  color: var(--au-accent-color);
+  background-color: var(--au-inverted-bg, #fff);
+  color: var(--au-inverted-color, var(--au-accent-color));
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 `
 

@@ -1,6 +1,6 @@
-import 'react-app-polyfill/ie11';
-import * as React from 'react';
-import { createRoot } from 'react-dom/client';
+import 'react-app-polyfill/ie11'
+import * as React from 'react'
+import { createRoot } from 'react-dom/client'
 import {
   Input,
   Radio,
@@ -14,13 +14,13 @@ import {
   Textarea,
   PasswordInput,
   Tags,
-} from '../.';
-import './styles.css';
+} from '../.'
+import './styles.css'
 
 const App = () => {
-  const [value, setValue] = React.useState('');
-  const [loading, setLoading] = React.useState(false);
-  const [tags, setTags] = React.useState(['hola', 'que', 'tal']);
+  const [value, setValue] = React.useState('')
+  const [loading, setLoading] = React.useState(false)
+  const [tags, setTags] = React.useState(['hola', 'que', 'tal'])
 
   return (
     <>
@@ -37,7 +37,6 @@ const App = () => {
           <Button
             onClick={() => setLoading(l => !l)}
             loading={loading}
-            inverted
             animated
           >
             Click me
@@ -146,12 +145,12 @@ const App = () => {
         />
       </div>
     </>
-  );
-};
+  )
+}
 
 interface Option {
-  readonly label: string;
-  readonly value: string;
+  readonly label: string
+  readonly value: string
 }
 
 const createOption = (opt: string | Option) =>
@@ -160,11 +159,11 @@ const createOption = (opt: string | Option) =>
         label: opt,
         value: opt,
       }
-    : opt;
+    : opt
 
-const container = document.getElementById('root');
-const root = createRoot(container!);
-root.render(<App />);
+const container = document.getElementById('root')
+const root = createRoot(container!)
+root.render(<App />)
 
 export const TYPE_OPTS = [
   { value: 'alphabet', label: 'Alphabet' },
@@ -173,4 +172,4 @@ export const TYPE_OPTS = [
   { value: 'sentences', label: 'Sentences' },
   { value: 'reading', label: 'Reading' },
   { value: 'listening', label: 'Listening' },
-];
+]
