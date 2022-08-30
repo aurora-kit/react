@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { jsx, css } from '@emotion/react';
-import { forwardRef, Fragment } from 'react';
-import Loader from './Loader';
+import { jsx, css } from '@emotion/react'
+import { forwardRef, Fragment } from 'react'
+import Loader from './Loader'
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
   (
@@ -73,34 +73,34 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           {loading ? <Loader /> : null}
         </div>
       </label>
-    );
+    )
   }
-);
+)
 
 export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
-  label?: string;
-  placeholder?: string;
+  label?: string
+  placeholder?: string
   // style: React.CSSProperties
-  error?: boolean;
-  onClear?: () => void;
-  isClearable?: boolean;
-  loading?: boolean;
-  hasValue?: boolean;
-  wrapperClassname?: string;
-  hideLabel?: boolean;
-};
+  error?: boolean
+  onClear?: () => void
+  isClearable?: boolean
+  loading?: boolean
+  hasValue?: boolean
+  wrapperClassname?: string
+  hideLabel?: boolean
+}
 
-export default Input;
+export default Input
 
 export const wrapperStyle = css`
   position: relative;
   display: block;
   margin-bottom: 10px;
-`;
+`
 
 export const inputWrapperStyle = css`
   position: relative;
-`;
+`
 
 export const labelStyle = css`
   position: relative;
@@ -111,7 +111,7 @@ export const labelStyle = css`
   padding-left: 0.7em;
   padding-right: 0.7em;
   margin-bottom: 0.3em;
-`;
+`
 export const textStyle = css`
   position: absolute;
   right: 18px;
@@ -121,16 +121,16 @@ export const textStyle = css`
   text-align: right;
   text-shadow: none;
   color: #b4b4b4;
-`;
+`
 export const inputStyle = css`
   border: 1px solid #eae0de;
   width: 100%;
   min-height: 48px;
-  background-color: hsl(0, 0%, 100%);
+  background-color: var(--au-input-bg, hsl(0, 0%, 100%));
   border-color: transparent;
   border-style: solid;
   border-width: 1px;
-  color: #141520;
+  color: var(--au-input-color, #141520);
   font-size: inherit;
   border-radius: 2em;
   transition: color 0.3s, background 0.3s;
@@ -140,17 +140,18 @@ export const inputStyle = css`
   /* background: #f1f1f3; */
 
   &::placeholder {
-    color: #9a9ba4;
+    color: var(--au-input-placeholder, rgba(255, 255, 255, 0.3));
   }
   &:focus::placeholder {
-    color: rgba(255, 255, 255, 0.3);
+    color: var(--au-input-placeholder--focus, #9a9ba4);
   }
   &:focus {
-    background-color: #fff;
+    color: var(--au-input-color--focus);
+    background-color: var(--au-input-bg--focus);
     border-color: var(--au-accent-color);
     box-shadow: 0 0 0 4px #f1f1f3;
   }
-`;
+`
 export const clearStyles = css`
   border: 0;
   background: none;
@@ -170,4 +171,4 @@ export const clearStyles = css`
   &:disabled {
     pointer-events: none;
   }
-`;
+`

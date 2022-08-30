@@ -26,6 +26,13 @@ body {
 
 :root {
   --au-accent-color: #ff4a5a;
+  /* --au-input-bg: #d1d1d1;
+  --au-input-color: red;
+  --au-input-bg--focus: #f00;
+  --au-input-color--focus: white;
+  --au-input-placeholder: yellow;
+  --au-input-placeholder--focus: blue; */
+
   /* --au-inverted-bg: var(--au-accent-color);
   --au-inverted-color: white; */
 }
