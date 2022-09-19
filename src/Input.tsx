@@ -149,7 +149,7 @@ export const inputStyle = css`
     color: var(--au-input-color--focus);
     background-color: var(--au-input-bg--focus);
     border-color: var(--au-accent-color);
-    box-shadow: 0 0 0 4px #f1f1f3;
+    box-shadow: 0 0 0 4px var(--au-input-shadow--focus, #f1f1f3);
   }
 `
 export const clearStyles = css`
