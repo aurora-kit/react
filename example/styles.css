@@ -26,6 +26,7 @@ body {
 
 :root {
   --au-accent-color: #ff4a5a;
+  --au-input-label: #ff4a5a;
   /* --au-input-bg: #d1d1d1;
   --au-input-color: red;
   --au-input-bg--focus: #f00;

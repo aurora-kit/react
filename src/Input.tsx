@@ -111,6 +111,7 @@ export const labelStyle = css`
   padding-left: 0.7em;
   padding-right: 0.7em;
   margin-bottom: 0.3em;
+  color: var(--au-input-label, inherit);
 `
 export const textStyle = css`
   position: absolute;
@@ -120,7 +121,7 @@ export const textStyle = css`
   max-width: 55%;
   text-align: right;
   text-shadow: none;
-  color: #b4b4b4;
+  color: inherit;
 `
 export const inputStyle = css`
   border: 1px solid #eae0de;
