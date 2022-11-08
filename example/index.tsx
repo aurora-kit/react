@@ -24,7 +24,17 @@ const App = () => {
 
   return (
     <>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          flexWrap: 'wrap',
+          background: '#f0f0f0',
+          padding: '1em',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
         <Input
           placeholder="jlkjkl"
           onChange={e => setValue(e.target.value)}
@@ -33,6 +43,10 @@ const App = () => {
           onClear={() => setValue('')}
           isClearable
         />
+        <Textarea>jkljl</Textarea>
+      </div>
+
+      <div style={{ display: 'flex', alignItems: 'center' }}>
         <Wrapper label={<>&nbsp;</>}>
           <Button
             onClick={() => setLoading(l => !l)}
@@ -79,9 +93,19 @@ const App = () => {
           shapeValue
           style={{ minHeight: 48, minWidth: 200 }}
         />
-        <Radio name="hola" value="1" checked />
-        <Radio name="hola" value="2" />
-        <Radio name="aa" value="2" isCheckbox />
+        <Wrapper label={<>&nbsp;</>}>
+          <Radio name="hola" value="1" checked>
+            Value 1
+          </Radio>
+          <Radio name="hola" value="2">
+            Value 2
+          </Radio>
+          <Radio name="aa" value="2" isCheckbox>
+            Value 3
+          </Radio>
+        </Wrapper>
+      </div>
+      <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
         <Loader />
         <Button
           onClick={() => setLoading(l => !l)}
@@ -108,8 +132,6 @@ const App = () => {
         <button className={`${buttonCx} ${buttonInvertedCx}`}>
           Raw button inverted
         </button>
-
-        <Textarea>jkljl</Textarea>
       </div>
       <div
         style={{

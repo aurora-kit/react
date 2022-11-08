@@ -50,7 +50,7 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(
             `}
           >
             {isCheckbox ? (
-              <svg viewBox="0 0 16 15" css={svgStyle} className="isCheckbox">
+              <svg viewBox="0 0 16 16" css={svgStyle} className="isCheckbox">
                 <path
                   fillRule="evenodd"
                   fill="currentColor"
