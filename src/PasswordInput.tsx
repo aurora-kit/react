@@ -1,29 +1,30 @@
 /** @jsx jsx */
-import { jsx, css } from '@emotion/react';
-import { forwardRef, useState } from 'react';
+import { jsx, css } from '@emotion/react'
+import { forwardRef, useState } from 'react'
 
-import EyeIcon from './EyeIcon';
-import Input, { InputProps } from './Input';
+import EyeIcon from './EyeIcon'
+import Input, { InputProps } from './Input'
 
 const PasswordInput = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false)
   return (
     <Input type={showPassword ? 'text' : 'password'} ref={ref} {...props}>
       <button
         type="button"
         onClick={e => {
-          e.preventDefault();
-          setShowPassword(s => !s);
+          e.preventDefault()
+          setShowPassword(s => !s)
         }}
         css={buttonStyle}
+        tabIndex={-1}
       >
         <EyeIcon crossed={showPassword} />
       </button>{' '}
     </Input>
-  );
-});
+  )
+})
 
-export default PasswordInput;
+export default PasswordInput
 
 export const buttonStyle = css`
   position: absolute;
@@ -44,4 +45,4 @@ export const buttonStyle = css`
   &:hover {
     color: #6e6e6f;
   }
-`;
+`
