@@ -1,9 +1,9 @@
 /** @jsx jsx */
-import { jsx, css } from '@emotion/react';
-import { Fragment } from 'react';
-import ReactSelect, { components, Props } from 'react-select';
-import AsyncSelect from 'react-select/async';
-import { wrapperStyle, labelStyle, textStyle } from './Input';
+import { jsx, css } from '@emotion/react'
+import { Fragment } from 'react'
+import ReactSelect, { components, Props } from 'react-select'
+import AsyncSelect from 'react-select/async'
+import { wrapperStyle, labelStyle, textStyle } from './Input'
 
 const Select: React.FC<SelectProps> = ({
   async,
@@ -18,16 +18,20 @@ const Select: React.FC<SelectProps> = ({
     options,
     value,
   }: {
-    options?: [OptionProps];
-    value?: string;
+    options?: [OptionProps]
+    value?: string
   }) => {
     return options
-      ? props.options
-          .flatMap((v: any) => (v.options ? v.options : v))
-          .find((option: OptionProps) => option.value === value)
-      : '';
-  };
-  const Comp = async ? AsyncSelect : ReactSelect;
+      ? props.isMulti
+        ? props.options
+            .flatMap((v: any) => (v.options ? v.options : v))
+            .filter((v: any) => value?.includes(v.value))
+        : props.options
+            .flatMap((v: any) => (v.options ? v.options : v))
+            .find((option: OptionProps) => option.value === value)
+      : ''
+  }
+  const Comp = async ? AsyncSelect : ReactSelect
 
   return (
     <label css={wrapperStyle}>
@@ -199,8 +203,8 @@ const Select: React.FC<SelectProps> = ({
         }}
       />
     </label>
-  );
-};
+  )
+}
 
 export function Indicator(props: any) {
   return (
@@ -214,7 +218,7 @@ export function Indicator(props: any) {
         d="M1.5 8.42l8.05 8.05 7.98-7.98M9.52 1.5v14.97"
       />
     </svg>
-  );
+  )
 }
 
 function DropdownIndicator(props: any) {
@@ -222,38 +226,38 @@ function DropdownIndicator(props: any) {
     <components.DropdownIndicator {...props}>
       <Indicator />
     </components.DropdownIndicator>
-  );
+  )
 }
 
 const selectComponents = {
   DropdownIndicator,
-};
-
-export type SelectProps = Props & {
-  label?: string;
-  placeholder?: string;
-  error?: boolean;
-  onClear?: () => void;
-  isClearable?: boolean;
-  loading?: boolean;
-  hasValue?: boolean;
-
-  async?: boolean;
-  style?: React.CSSProperties;
-  menuListStyle?: {};
-  shapeValue?: any;
-  options?: any;
-  value?: string;
-};
-
-export type OptionProps = {
-  value?: string;
-  label?: string;
-};
-
-export interface Option {
-  readonly label: string;
-  readonly value: string;
 }
 
-export default Select;
+export type SelectProps = Props & {
+  label?: string
+  placeholder?: string
+  error?: boolean
+  onClear?: () => void
+  isClearable?: boolean
+  loading?: boolean
+  hasValue?: boolean
+
+  async?: boolean
+  style?: React.CSSProperties
+  menuListStyle?: {}
+  shapeValue?: any
+  options?: any
+  value?: string
+}
+
+export type OptionProps = {
+  value?: string
+  label?: string
+}
+
+export interface Option {
+  readonly label: string
+  readonly value: string
+}
+
+export default Select

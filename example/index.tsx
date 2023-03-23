@@ -21,7 +21,8 @@ const App = () => {
   const [value, setValue] = React.useState('')
   const [loading, setLoading] = React.useState(false)
   const [tags, setTags] = React.useState(['hola', 'que', 'tal'])
-
+  const [selectValue, setSelectValue] = React.useState<any>(['alphabet'])
+  console.log(selectValue)
   return (
     <>
       <div
@@ -67,12 +68,21 @@ const App = () => {
             { value: 'reading', label: 'Reading' },
             { value: 'listening', label: 'Listening' },
           ]}
-          value="reading"
+          value={selectValue}
           shapeValue
           isSearchable={false}
           isClearable
           isMulti
           style={{ minHeight: 48, minWidth: 200 }}
+          onChange={value =>
+            setSelectValue(
+              value
+                ? Array.isArray(value)
+                  ? value.map(({ value }) => value)
+                  : undefined
+                : undefined
+            )
+          }
         />
         <Select
           placeholder="Type"
