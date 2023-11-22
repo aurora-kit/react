@@ -21,31 +21,34 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
       hasValue,
       placeholder,
       labelProps = {},
+      hideLabel,
       ...props
     },
     ref
   ) => {
     return (
       <label css={wrapperStyle} {...labelProps}>
-        <p css={labelStyle}>
-          {label ? (
-            label
-          ) : !label && hasValue ? (
-            placeholder
-          ) : (
-            <Fragment>&nbsp;</Fragment>
-          )}
-          {error ? (
-            <span
-              css={css`
-                ${textStyle}
-                color: #ff3b57
-              `}
-            >
-              {error}
-            </span>
-          ) : null}
-        </p>
+        {hideLabel ? null : (
+          <p css={labelStyle}>
+            {label ? (
+              label
+            ) : !label && hasValue ? (
+              placeholder
+            ) : (
+              <Fragment>&nbsp;</Fragment>
+            )}
+            {error ? (
+              <span
+                css={css`
+                  ${textStyle}
+                  color: #ff3b57
+                `}
+              >
+                {error}
+              </span>
+            ) : null}
+          </p>
+        )}
 
         <textarea
           ref={ref}
@@ -87,6 +90,7 @@ export type TextareaProps = React.InputHTMLAttributes<HTMLTextAreaElement> & {
   loading?: boolean
   hasValue?: boolean
   labelProps?: any
+  hideLabel?: boolean
 }
 
 export default Textarea

@@ -44,7 +44,7 @@ const App = () => {
           onClear={() => setValue('')}
           isClearable
         />
-        <Textarea>jkljl</Textarea>
+        <Textarea hideLabel>jkljl</Textarea>
       </div>
 
       <div style={{ display: 'flex', alignItems: 'center' }}>
