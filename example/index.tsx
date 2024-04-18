@@ -168,7 +168,7 @@ const App = () => {
           isClearable
           hideLabel
         />
-        <PasswordInput />
+        <PasswordInput defaultVisible />
 
         <Tags
           value={tags.map(createOption)}

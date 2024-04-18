@@ -5,8 +5,11 @@ import { forwardRef, useState } from 'react'
 import EyeIcon from './EyeIcon'
 import Input, { InputProps } from './Input'
 
-const PasswordInput = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
-  const [showPassword, setShowPassword] = useState(false)
+const PasswordInput = forwardRef<
+  HTMLInputElement,
+  InputProps & { defaultVisible?: boolean }
+>((props, ref) => {
+  const [showPassword, setShowPassword] = useState(props.defaultVisible)
   return (
     <Input type={showPassword ? 'text' : 'password'} ref={ref} {...props}>
       <button
